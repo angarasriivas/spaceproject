@@ -1,0 +1,202 @@
+/* project.css - Attractive styling for React components with animations */
+
+/* Import Poppins font for modern typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* General section styling */
+section {
+  background: linear-gradient(135deg, #d9f99d, #bef264); /* Vibrant lime gradient */
+  padding: 4rem 2rem;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInSection 1.2s ease-out;
+  overflow: hidden;
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeInSection {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Heading styles */
+h1, h2 {
+  color: #1e293b; /* Slate-800 for contrast */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  font-size: 3.5rem;
+  background: linear-gradient(to right, #1e293b, #4b5563);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+h2 {
+  font-size: 2.5rem;
+}
+
+/* Feature card styling */
+.feature-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInCard 0.8s ease-out;
+  animation-delay: calc(0.2s * var(--index));
+}
+.feature-card::before {
+  content: '🌱';
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.5rem;
+  opacity: 0.2;
+}
+.feature-card:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #f7fafc, #e6fffa);
+}
+.feature-card p:first-child {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  font-family: 'Poppins', sans-serif;
+}
+.feature-card p:last-child {
+  color: #475569;
+  font-size: 1rem;
+}
+
+/* Reason card styling */
+.reason-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInCard 0.8s ease-out;
+  animation-delay: calc(0.2s * var(--index));
+}
+.reason-card::before {
+  content: '⚙️';
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.5rem;
+  opacity: 0.2;
+}
+.reason-card:hover {
+  transform: translateY(-8px) rotate(-1deg);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #f7fafc, #fefcbf);
+}
+.reason-card p:first-child {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  font-family: 'Poppins', sans-serif;
+}
+.reason-card p:last-child {
+  color: #475569;
+  font-size: 1rem;
+}
+
+/* Testimonial card styling */
+.testimonial-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInCard 0.8s ease-out;
+  animation-delay: calc(0.2s * var(--index));
+}
+.testimonial-card::before {
+  content: '💬';
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.5rem;
+  opacity: 0.2;
+}
+.testimonial-card:hover {
+  transform: scale(1.05) rotate(0.5deg);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #f7fafc, #e9d5ff);
+}
+.testimonial-card p:first-child {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  font-family: 'Poppins', sans-serif;
+}
+.testimonial-card p:last-child {
+  color: #475569;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* Fade-in animation for cards */
+@keyframes fadeInCard {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive grid for WhyChooseUs */
+@media (min-width: 768px) {
+  .grid-cols-1.md\\:grid-cols-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+/* Divider styling */
+hr {
+  border-top: 3px solid #1e293b;
+  margin: 3rem 0;
+  width: 80%;
+  border-radius: 2px;
+}
+
+/* Container styling */
+.max-w-4xl {
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Font and background for the app */
+.font-sans {
+  font-family: 'Poppins', sans-serif;
+}
+.bg-lime-200 {
+  background: linear-gradient(to bottom, #ecfccb, #d9f99d); /* Enhanced lime gradient */
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .feature-card, .reason-card, .testimonial-card {
+    padding: 1.5rem;
+  }
+}
